@@ -1,2 +1,2 @@
-# agama-registration
-Agama Project to provide a sample workflow for registration
+### agama-registration
+ Designing an Agama Flow for seamless user registration with validation and authentication.
