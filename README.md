@@ -73,9 +73,9 @@ Check the flow detail section for details about configuration parameters.
 
 ### Test The Flow
 
-Use any Relying party implementation (like [jans-tarp](https://github.com/JanssenProject/jans/tree/main/demos/jans-tarp)) to send authentication request that triggers the flow.
+Use any Relying party implementation (like [jans-tarp](https://github.com/JanssenProject/jans/tree/main/demos/jans-tarp)) to send registration request that triggers the flow.
 
-From the incoming authentication request, the Janssen Server reads the `ACR` 
+From the incoming registration request, the Janssen Server reads the `ACR` 
 parameter value to identify which authentication method should be used. 
 To invoke the `org.gluu.agama.registration.main` flow contained in the  Agama-Registration project, 
 specify the ACR value as `agama_<qualified-name-of-the-top-level-flow>`, 
@@ -109,8 +109,32 @@ In step one, the user enters their basic information, including `userName`, `dis
 # Sequence Diagram
 
 A basic diagram to understand how the `agama-registration` works.
+```mermaid
+sequenceDiagram
 
-Content is inprogress....
+title Agama-Registration flow
+
+participant User
+participant RP
+participant IDP
+participant DB
+
+User->RP:New user try to access RP
+RP->IDP:Registration form
+IDP->>IDP:check if user with same email already exists
+IDP->>User:User already registered try again
+IDP->DB:If user not exist then save as a new user
+IDP->RP:Complete registration and back to RP
+
+```
+
+# Demo
+
+
+https://github.com/user-attachments/assets/faf4b9bd-6541-4db6-b093-9dce4e9284ed
+
+
+
 
 
  <!-- This are stats url reference for this repository -->
