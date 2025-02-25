@@ -5,7 +5,7 @@ Flow org.gluu.agama.registration.main
 // Create  variable for UI feedback
 uiFeedback = {}
 // Iterate x times max
-max = Repeat 6 times max
+Repeat 6 times max
      // Retrieve user profile  from UI
      userInput = RRF "profile.ftlh" uiFeedback
      // Assign userName and email  to a variable
@@ -34,8 +34,8 @@ max = Repeat 6 times max
                          // Assign User Id to a variable
                          uid = userName
                          // Finish the flow successfully
-                         it_txaxf = {success:true, data: { userId: uid}}
-                         Finish it_txaxf
+                         it_veqsy = {success:true, data: { userId: uid}}
+                         Finish it_veqsy
                     // No action on continue button
                     Log "@info No action on continue button"
                     // Finish the flow
@@ -57,5 +57,5 @@ max = Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_kbtij = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_kbtij
+it_dgifh = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_dgifh
