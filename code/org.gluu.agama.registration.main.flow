@@ -29,31 +29,34 @@ max = Repeat 6 times max
                     // Show acknowledgement UI page for successful registration
                     acknowledgementInput = RRF "acknowledgement.ftlh" 
                     // If User clicks in continue button
-                    When acknowledgementInput.ack is not null
+                    When acknowledgementInput.ack is "continue"
                          // Finish the flow successfully
                          Log "@info Finish the flow successfully"
                          // Assign User Id to a variable
-                         uid = userInput.uid
+                         uid = userName
                          // Finish the flow successfully
-                         it_vxlwb = {success:true, data: { userId: uid}}
-                         Finish it_vxlwb
-               Otherwise
-                    // Registration failed log
-                    Log "@info User registration failed. Error : %" E
-                    // Error variable assignment.
-                    uiFeedback.errorMessage = "FailedUserRegistration"
+                         it_fvmhn = {success:true, data: { userId: uid}}
+                         Finish it_fvmhn
+                    // No action on continue button
+                    Log "@info No action on continue button"
+                    // Finish the flow
+                    Finish userName
+               // Registration failed log
+               Log "@info User registration failed. Error : %" E
+               // Error variable assignment.
+               uiFeedback.errorMessage = "User registration failed "
           Otherwise
                // User already exists
                Log "@info User already exists with mail: %" email
-               // Error assign variable
-               uiFeedback.errorMessage = "UserAlreadyExists"
+               // User already Registered
+               uiFeedback.errorMessage = "User already Registered"
      Otherwise
           // Password and Confirm password doesn't match
           Log "@trace Password and Confirm password doesn't match"
           // Error variable assignment
-          uiFeedback.errorMessage = "PasswordDoNotMatch"
+          uiFeedback.errorMessage = "Password not matching"
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_ocoit = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_ocoit
+it_qbfuf = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_qbfuf
