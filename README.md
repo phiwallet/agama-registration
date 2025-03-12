@@ -107,9 +107,9 @@ In step one, the user enters their basic information, including `userName`, `dis
 # Sequence Diagram
 
 A basic diagram to understand how the `agama-registration` works.
-```mermaid
-sequenceDiagram xxxxx    https://git.fusionpulsetech.com/fpt/ecom/hsm/hsm-ecom/-/issues/77vvvvv
 
+```mermaid
+sequenceDiagram
 title Agama-Registration flow
 
 participant User
@@ -123,7 +123,6 @@ IDP->>IDP:check if user with same email already exists
 IDP->>User:User already registered try again
 IDP->DB:If user not exist then save as a new user
 IDP->RP:Complete registration and back to RP
-
 ```
 
 # Demo
