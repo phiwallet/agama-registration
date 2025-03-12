@@ -57,19 +57,17 @@ the `.gama` package.
 
 ### Configure The Project
 
-Agama project accepts configuration parameters in the JSON format. Every Agama 
+Agama project accepts configuration parameters in the JSON format. Agama 
 project comes with a basic sample configuration file for reference.
-
-Below is a typical configuration of the Agama-Registration project. As show, it contains
-configuration parameters for the [flows contained in it](#flows-in-the-project):
  ```
 {
-  "org.gluu.agama.registration.main": {
+  "<main_flow_name>": {
   }
 }
  ```
 
-Check the flow detail section for details about configuration parameters.
+But the Agama-Registration project does not require any configuration parameters.
+
 
 ### Test The Flow
 
@@ -110,7 +108,7 @@ In step one, the user enters their basic information, including `userName`, `dis
 
 A basic diagram to understand how the `agama-registration` works.
 ```mermaid
-sequenceDiagram
+sequenceDiagram xxxxx    https://git.fusionpulsetech.com/fpt/ecom/hsm/hsm-ecom/-/issues/77vvvvv
 
 title Agama-Registration flow
 
