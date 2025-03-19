@@ -26,7 +26,7 @@
 	  <form method="post" id="myForm" class="my-8">
 		<div class="space-y-9">
 		  <div class="button">
-			<button type="submit" id="ack" name="ack" value="continue" class="btn">Continue</button>
+			<button type="submit" class="btn">Continue</button>
 		  </div>
 		</div>
 	  </form>

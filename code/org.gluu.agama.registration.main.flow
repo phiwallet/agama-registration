@@ -27,15 +27,9 @@ Repeat 6 times max
                     Log "@info User % has been created" inum
                     // Show acknowledgement UI page for successful registration
                     acknowledgementInput = RRF "acknowledgement.ftlh" 
-                    // If User clicks in continue button
-                    When acknowledgementInput.ack is "continue"
-                         // Finish the flow successfully
-                         Log "@info Finish the flow successfully"
-                         // Finish the flow successfully
-                         Finish userName
-                    // No action on continue button
-                    Log "@info No action on continue button"
-                    // Finish the flow
+                    // Finish the flow successfully
+                    Log "@info Finish the flow successfully"
+                    // Finish the flow successfully
                     Finish userName
                // Registration failed log
                Log "@info User registration failed. Error : %" E
@@ -54,5 +48,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_fnpyn = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_fnpyn
+it_zjuqv = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_zjuqv
