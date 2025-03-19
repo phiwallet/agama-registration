@@ -23,7 +23,16 @@
 		You've successfully Registered on Jansen!!!
 		<br>
 	  </p>
+	  <form method="post" id="myForm" class="my-8">
+		<div class="space-y-9">
+		  <div class="button">
+			<button type="submit" class="btn">Continue</button>
+		  </div>
+		</div>
+	  </form>
 	</div>
+	
+	
   
   
   
