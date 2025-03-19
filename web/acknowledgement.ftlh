@@ -19,12 +19,10 @@
 	  </h1>
 	  <div class="separator">
 	  </div>
-	  [#if obj?has_content]
 	  <p class="message">
 		Hi,${obj.name} You've successfully Registered on Jansen!!! ${name}
 		<br>
 	  </p>
-	  [/#if]
 	</div>
   
   
