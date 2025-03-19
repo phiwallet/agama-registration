@@ -629,7 +629,7 @@
 				"agamaData": {
 					"assignments": [],
 					"nodeIcon": "ph:globe-simple",
-					"templatePath": "acknowledgement.ftlh",
+					"templatePath": "profile.ftlh",
 					"asssignedVariableName": "acknowledgementInput",
 					"nodeColor": "",
 					"titleColor": "",
@@ -637,14 +637,14 @@
 					"displayName": "",
 					"hasComment": true,
 					"comment": "Show acknowledgement UI page for successful registration",
-					"arguments": "obj"
+					"arguments": "obj true"
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 124
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false
 		},
 		{
@@ -861,7 +861,7 @@
 				"width": 170,
 				"height": 124
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
@@ -1341,8 +1341,8 @@
 		}
 	],
 	"viewport": {
-		"x": -2538,
-		"y": -665,
+		"x": -2990,
+		"y": -671,
 		"zoom": 1
 	}
 }
