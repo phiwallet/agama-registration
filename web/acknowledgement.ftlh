@@ -19,9 +19,9 @@
 	  </h1>
 	  <div class="separator">
 	  </div>
-	  [#if username?has_content]
+	  [#if obj?has_content]
 	  <p class="message">
-		Hi,${username} You've successfully Registered on Jansen!!!
+		Hi,${obj.name} You've successfully Registered on Jansen!!! ${name}
 		<br>
 	  </p>
 	  [/#if]
