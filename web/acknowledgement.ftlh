@@ -19,10 +19,12 @@
 	  </h1>
 	  <div class="separator">
 	  </div>
+	  [#if username?has_content]
 	  <p class="message">
-		Hi,${name} You've successfully Registered on Jansen!!!
+		Hi,${username} You've successfully Registered on Jansen!!!
 		<br>
 	  </p>
+	  [#if]
 	  <form method="post" id="myForm" class="my-8">
 		<div class="space-y-9">
 		  <div class="button">
