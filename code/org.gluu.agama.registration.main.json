@@ -637,7 +637,7 @@
 					"displayName": "",
 					"hasComment": true,
 					"comment": "Show acknowledgement UI page for successful registration",
-					"arguments": "obj true"
+					"arguments": "obj"
 				}
 			},
 			"measured": {
@@ -1341,8 +1341,8 @@
 		}
 	],
 	"viewport": {
-		"x": -3933.073235010749,
-		"y": -948.564355787563,
+		"x": -3676.073235010749,
+		"y": -912.5643557875628,
 		"zoom": 1.2557542969265065
 	}
 }
