@@ -20,7 +20,7 @@
 	  <div class="separator">
 	  </div>
 	  <p class="message">
-		Hi,${obj.name} You've successfully Registered on Jansen!!! ${name}
+		You've successfully Registered on Jansen!!!
 		<br>
 	  </p>
 	</div>
