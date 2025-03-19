@@ -28,7 +28,7 @@ Repeat 6 times max
                     // show user name to UI
                     obj = {name : userName}
                     // Show acknowledgement UI page for successful registration
-                    acknowledgementInput = RRF "profile.ftlh" obj true
+                    acknowledgementInput = RRF "profile.ftlh" obj
                     // Finish the flow successfully
                     Log "@info Finish the flow successfully"
                     // Finish the flow successfully
@@ -50,5 +50,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_uxelt = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_uxelt
+it_mnxba = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_mnxba
