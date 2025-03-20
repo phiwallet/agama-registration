@@ -33,8 +33,6 @@ Repeat 6 times max
                     Finish userName
                // Registration failed log
                Log "@info User registration failed. Error : %" E
-               // Error variable assignment.
-               uiFeedback.errorMessage = "User registration failed "
           Otherwise
                // User already exists
                Log "@info User already exists with mail: %" email
@@ -48,5 +46,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_zjuqv = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_zjuqv
+it_xvgza = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_xvgza
