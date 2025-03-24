@@ -10,6 +10,7 @@ import io.jans.util.StringHelper;
 import org.gluu.agama.user.UserRegistration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import io.jans.agama.engine.script.LogUtils;
 import java.io.IOException;
 import io.jans.as.common.service.common.ConfigurationService;
 import java.security.SecureRandom;
@@ -50,6 +51,8 @@ public class JansUserRegistration extends UserRegistration {
         User user = getUser(MAIL, email);
         boolean local = user != null;
         logger.debug("There is {} local account for {}", local ? "a" : "no", email);
+        LogUtils.log("There is % local account for %", local ? "a" : "no", email);
+        LogUtils.log("There is {} local account for {}", local ? "a" : "no", email);
     
         if (local) {
             String uid = getSingleValuedAttr(user, UID);
