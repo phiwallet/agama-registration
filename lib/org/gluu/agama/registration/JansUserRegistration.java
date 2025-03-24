@@ -74,7 +74,7 @@ public class JansUserRegistration extends UserRegistration {
             return userMap;
         }
         if(local2){
-            String exEmail = getSingleValuedAttr(user, MAIL);
+            String exEmail = getSingleValuedAttr(userFoundWithUid, MAIL);
             String uid = getSingleValuedAttr(userFoundWithUid, UID);
             String inum = getSingleValuedAttr(userFoundWithUid, INUM_ATTR);
             String name = getSingleValuedAttr(userFoundWithUid, GIVEN_NAME);
