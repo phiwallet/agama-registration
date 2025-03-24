@@ -8,8 +8,6 @@ import io.jans.service.cdi.util.CdiUtil;
 import io.jans.util.StringHelper;
 
 import org.gluu.agama.user.UserRegistration;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import io.jans.agama.engine.script.LogUtils;
 import java.io.IOException;
 import io.jans.as.common.service.common.ConfigurationService;
@@ -22,8 +20,6 @@ import java.util.stream.IntStream;
 
 public class JansUserRegistration extends UserRegistration {
     
-    private static final Logger logger = LoggerFactory.getLogger(JansUserRegistration.class);
-
     private static final String MAIL = "mail";
     private static final String UID = "uid";
     private static final String DISPLAY_NAME = "displayName";
@@ -47,14 +43,16 @@ public class JansUserRegistration extends UserRegistration {
         return INSTANCE;
     }
 
-    public Map<String, String> getUserEntity(String email) {
+    public Map<String, String> getUserEntity(String email, String username) {
         User user = getUser(MAIL, email);
         boolean local = user != null;
-        logger.debug("There is {} local account for {}", local ? "a" : "no", email);
         LogUtils.log("There is % local account for %", local ? "a" : "no", email);
-        LogUtils.log("There is {} local account for {}", local ? "a" : "no", email);
+
+        User userFoundWithUid = getUser(UID, username);
+        boolean local2 = userFoundWithUid !=null;
+        LogUtils.log("There is % local account for %", local2 ? "a" : "no", username);
     
-        if (local) {
+        if (local && local2) {
             String uid = getSingleValuedAttr(user, UID);
             String inum = getSingleValuedAttr(user, INUM_ATTR);
             String name = getSingleValuedAttr(user, GIVEN_NAME);
@@ -97,7 +95,7 @@ public class JansUserRegistration extends UserRegistration {
                 }
             }
     
-            logger.debug("There is {} local account for {}", local ? "a" : "no", userName);
+            LogUtils.log("There is % local account for %", local ? "a" : "no", userName);
     
             // Creating a modifiable HashMap directly
             Map<String, String> userMap = new HashMap<>();
