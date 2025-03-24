@@ -8,8 +8,7 @@ import io.jans.service.cdi.util.CdiUtil;
 import io.jans.util.StringHelper;
 
 import org.gluu.agama.user.UserRegistration;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import io.jans.agama.engine.script.LogUtils;
 import java.io.IOException;
 import io.jans.as.common.service.common.ConfigurationService;
 import java.security.SecureRandom;
@@ -21,8 +20,6 @@ import java.util.stream.IntStream;
 
 public class JansUserRegistration extends UserRegistration {
     
-    private static final Logger logger = LoggerFactory.getLogger(JansUserRegistration.class);
-
     private static final String MAIL = "mail";
     private static final String UID = "uid";
     private static final String DISPLAY_NAME = "displayName";
@@ -46,12 +43,16 @@ public class JansUserRegistration extends UserRegistration {
         return INSTANCE;
     }
 
-    public Map<String, String> getUserEntity(String email) {
+    public Map<String, String> getUserEntity(String email, String username) {
         User user = getUser(MAIL, email);
         boolean local = user != null;
-        logger.debug("There is {} local account for {}", local ? "a" : "no", email);
+        LogUtils.log("There is % local account for %", local ? "a" : "no", email);
+
+        User userFoundWithUid = getUser(UID, username);
+        boolean local2 = userFoundWithUid !=null;
+        LogUtils.log("There is % local account for %", local2 ? "a" : "no", username);
     
-        if (local) {
+        if (local) {            
             String uid = getSingleValuedAttr(user, UID);
             String inum = getSingleValuedAttr(user, INUM_ATTR);
             String name = getSingleValuedAttr(user, GIVEN_NAME);
@@ -71,6 +72,28 @@ public class JansUserRegistration extends UserRegistration {
             userMap.put("email", email);
     
             return userMap;
+        }
+        if(local2){
+            String exEmail = getSingleValuedAttr(userFoundWithUid, MAIL);
+            String uid = getSingleValuedAttr(userFoundWithUid, UID);
+            String inum = getSingleValuedAttr(userFoundWithUid, INUM_ATTR);
+            String name = getSingleValuedAttr(userFoundWithUid, GIVEN_NAME);
+    
+            if (name == null) {
+                name = getSingleValuedAttr(userFoundWithUid, DISPLAY_NAME);
+                if (name == null && exEmail != null && exEmail.contains("@")) {
+                    name = exEmail.substring(0, exEmail.indexOf("@"));
+                }
+            }
+    
+            // Creating a truly modifiable map
+            Map<String, String> userMap = new HashMap<>();
+            userMap.put(UID, uid);
+            userMap.put(INUM_ATTR, inum);
+            userMap.put("name", name);
+            userMap.put("email", exEmail);
+    
+            return userMap;           
         }
     
         return new HashMap<>();
@@ -94,7 +117,7 @@ public class JansUserRegistration extends UserRegistration {
                 }
             }
     
-            logger.debug("There is {} local account for {}", local ? "a" : "no", userName);
+            LogUtils.log("There is % local account for %", local ? "a" : "no", userName);
     
             // Creating a modifiable HashMap directly
             Map<String, String> userMap = new HashMap<>();
