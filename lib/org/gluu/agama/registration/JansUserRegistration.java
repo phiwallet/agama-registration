@@ -52,7 +52,7 @@ public class JansUserRegistration extends UserRegistration {
         boolean local2 = userFoundWithUid !=null;
         LogUtils.log("There is % local account for %", local2 ? "a" : "no", username);
     
-        if (local || local2) {
+        if (local) {            
             String uid = getSingleValuedAttr(user, UID);
             String inum = getSingleValuedAttr(user, INUM_ATTR);
             String name = getSingleValuedAttr(user, GIVEN_NAME);
@@ -72,6 +72,28 @@ public class JansUserRegistration extends UserRegistration {
             userMap.put("email", email);
     
             return userMap;
+        }
+        if(local2){
+            String exEmail = getSingleValuedAttr(user, MAIL);
+            String uid = getSingleValuedAttr(userFoundWithUid, UID);
+            String inum = getSingleValuedAttr(userFoundWithUid, INUM_ATTR);
+            String name = getSingleValuedAttr(userFoundWithUid, GIVEN_NAME);
+    
+            if (name == null) {
+                name = getSingleValuedAttr(userFoundWithUid, DISPLAY_NAME);
+                if (name == null && exEmail != null && exEmail.contains("@")) {
+                    name = exEmail.substring(0, exEmail.indexOf("@"));
+                }
+            }
+    
+            // Creating a truly modifiable map
+            Map<String, String> userMap = new HashMap<>();
+            userMap.put(UID, uid);
+            userMap.put(INUM_ATTR, inum);
+            userMap.put("name", name);
+            userMap.put("email", exEmail);
+    
+            return userMap;           
         }
     
         return new HashMap<>();
