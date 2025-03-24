@@ -52,7 +52,7 @@ public class JansUserRegistration extends UserRegistration {
         boolean local2 = userFoundWithUid !=null;
         LogUtils.log("There is % local account for %", local2 ? "a" : "no", username);
     
-        if (local && local2) {
+        if (local || local2) {
             String uid = getSingleValuedAttr(user, UID);
             String inum = getSingleValuedAttr(user, INUM_ATTR);
             String name = getSingleValuedAttr(user, GIVEN_NAME);
