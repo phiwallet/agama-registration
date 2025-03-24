@@ -16,7 +16,7 @@ Repeat 6 times max
           // Create an instance of User Registration Class
           userRegistrationService = Call org.gluu.agama.user.UserRegistration#getInstance 
           // Check user already exist or not
-          user = Call userRegistrationService getUserEntity email
+          user = Call userRegistrationService getUserEntity email userName
           // If user not found
           When user.empty is true
                // Call user registration service method to register a new user
@@ -46,5 +46,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_xvgza = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_xvgza
+it_ecist = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_ecist
