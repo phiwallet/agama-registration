@@ -45,7 +45,7 @@ public class JansUserRegistration extends UserRegistration {
 
     public boolean passwordPolicyMatch(String password) {
         // Regex: At least one special character and minimum length of 6
-        String regex = "^(?=.*[!@#\\\\$\\\\^&*])[A-Za-z0-9!@#\\\\$\\\\^&*]{6,}$";
+        String regex = "^(?=.*[!@#$^&*])[A-Za-z0-9!@#$^&*]{6,}$";
         return password.matches(regex);
     }
 
