@@ -34,8 +34,8 @@ Repeat 6 times max
                // Registration failed log
                Log "@info User registration failed. Error : %" E
           Otherwise
-               // User already exists
-               Log "@info User already exists with mail: %" email
+               // User already registered with mail
+               Log "@info User already registered with mail: %" email
                // User already Registered
                uiFeedback.errorMessage = "User already Registered"
      Otherwise
@@ -46,5 +46,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_detww = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_detww
+it_grdeb = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_grdeb
