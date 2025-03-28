@@ -77,7 +77,7 @@ public class JansUserRegistration extends UserRegistration {
     public Map<String, String> getUserEntityByUsername(String username) {
         User user = getUser(UID, username);
         boolean local = user != null;
-        LogUtils.log("There is % local account for %", local2 ? "a" : "no", username);
+        LogUtils.log("There is % local account for %", local ? "a" : "no", username);
     
         if (local) {
             String email = getSingleValuedAttr(user, MAIL);
