@@ -15,6 +15,7 @@ import java.security.SecureRandom;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.regex.Pattern;
 
 
 
@@ -44,10 +45,8 @@ public class JansUserRegistration extends UserRegistration {
     }
 
     public boolean passwordPolicyMatch(String password) {
-        // Regex: At least one special character and minimum length of 6
-        // String regex = "^(?=.*[!@#\\$\\^&*])[A-Za-z0-9!@#\\$\\^&*]{6,}$";
-        String regex = "^(?=.*[!@#$^&*])[A-Za-z0-9!@#$^&*]{6,}$";
-        return password.matches(regex);
+        Pattern pattern = Pattern.compile("^(?=.*[!@#\\Q$^&*\\E])[A-Za-z0-9!@#\\Q$^&*\\E]{6,}$");
+        return pattern.matcher(password).matches();
     }
 
     public boolean usernamePolicyMatch(String username) {
