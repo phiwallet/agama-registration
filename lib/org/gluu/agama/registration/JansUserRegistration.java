@@ -45,9 +45,6 @@ public class JansUserRegistration extends UserRegistration {
     }
 
     public boolean passwordPolicyMatch(String password) {
-        // Pattern pattern = Pattern.compile("^(?=.*[!@#\\Q$^&*\\E])[A-Za-z0-9!@#\\Q$^&*\\E]{6,}$");
-        // String regex = "^(?=.*[!@#\\$\\^&*])[A-Za-z0-9!@#\\$\\^&*]{6,}$";
-        // String regex = """^(?=.*[!@#\\$\\^&*])[A-Za-z0-9!@#\\$\\^&*]{6,}$""";
         String regex = '''^(?=.*[!@#$^&*])[A-Za-z0-9!@#$^&*]{6,}$'''
         Pattern pattern = Pattern.compile(regex);
         return pattern.matcher(password).matches();
@@ -55,8 +52,9 @@ public class JansUserRegistration extends UserRegistration {
 
     public boolean usernamePolicyMatch(String username) {
         // Regex: Only alphabets (uppercase and lowercase), minimum 1 character
-        String regex = "^[A-Za-z]+$";
-        return username.matches(regex);
+        String regex = '''^[A-Za-z]+$''';
+        Pattern pattern = Pattern.compile(regex);
+        return pattern.matcher(password).matches();
     }
 
     public Map<String, String> getUserEntityByMail(String email) {
