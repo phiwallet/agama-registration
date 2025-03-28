@@ -34,7 +34,7 @@ public class JansUserRegistration extends UserRegistration {
 
     private static JansUserRegistration INSTANCE = null;
 
-    private JansUserRegistration() {}
+    public JansUserRegistration() {}
 
     public static synchronized JansUserRegistration getInstance()
     {
