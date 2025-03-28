@@ -241,6 +241,11 @@
 							"variableTypeCheck": false,
 							"assignmentExpression": "userInput.uid",
 							"assignedVariableName": "userName"
+						},
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "userInput.password",
+							"assignedVariableName": "password"
 						}
 					],
 					"nodeIcon": "material-symbols:equal",
@@ -249,14 +254,14 @@
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": "Assign userName and email  to a variable"
+					"comment": "Assign userName, email and password  to a variable"
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 124
 			},
-			"selected": false
+			"selected": true
 		},
 		{
 			"id": "whenNode-95f113c1-0fb1-442d-8d6d-b46a7d751bef",
