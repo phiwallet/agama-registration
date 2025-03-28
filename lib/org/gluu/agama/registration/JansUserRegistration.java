@@ -43,6 +43,18 @@ public class JansUserRegistration extends UserRegistration {
         return INSTANCE;
     }
 
+    public boolean passwordPolicyMatch(String password) {
+        // Regex: At least one special character and minimum length of 6
+        String regex = "^(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{6,}$";
+        return password.matches(regex);
+    }
+
+    public boolean usernamePolicyMatch(String username) {
+        // Regex: Only alphabets (uppercase and lowercase), minimum 1 character
+        String regex = "^[A-Za-z]+$";
+        return username.matches(regex);
+    }
+
     public Map<String, String> getUserEntityByMail(String email) {
         User user = getUser(MAIL, email);
         boolean local = user != null;
