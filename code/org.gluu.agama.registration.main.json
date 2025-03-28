@@ -369,7 +369,7 @@
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": "Check user already exist or not",
+					"comment": "Check user already exist or not with mail",
 					"asssignedVariableName": "user"
 				}
 			},
@@ -377,7 +377,7 @@
 				"width": 170,
 				"height": 124
 			},
-			"selected": false
+			"selected": true
 		},
 		{
 			"id": "whenNode-c1ae3675-fb2f-40f2-8290-c5190571a966",
@@ -425,7 +425,7 @@
 			"id": "callNode-861000cb-79c2-4b41-b03e-70f383658cd7",
 			"type": "callNode",
 			"position": {
-				"x": 2280,
+				"x": 2530,
 				"y": 680
 			},
 			"data": {
@@ -435,8 +435,7 @@
 					"x": 2280,
 					"y": 680
 				},
-				"previousNodeId": "whenNode-c1ae3675-fb2f-40f2-8290-c5190571a966",
-				"branching": "success",
+				"previousNodeId": "callNode-e0397613-59c0-4299-b673-d3d21576d65d",
 				"agamaData": {
 					"javaClassName": "",
 					"javaMethodName": "addNewUser",
@@ -466,7 +465,7 @@
 			"id": "whenNode-51e74368-a147-4d88-a03f-76daebffff2c",
 			"type": "whenNode",
 			"position": {
-				"x": 2530,
+				"x": 2780,
 				"y": 680
 			},
 			"data": {
@@ -508,7 +507,7 @@
 			"id": "logNode-dfc16af5-4d1b-4bd5-88b8-36562fd3c788",
 			"type": "logNode",
 			"position": {
-				"x": 2780,
+				"x": 3030,
 				"y": 880
 			},
 			"data": {
@@ -542,7 +541,7 @@
 			"id": "logNode-2f6437c8-ca5d-4ed8-911f-2e1f106bc831",
 			"type": "logNode",
 			"position": {
-				"x": 2780,
+				"x": 3030,
 				"y": 430
 			},
 			"data": {
@@ -576,7 +575,7 @@
 			"id": "rrfNode-059b5072-b04c-45b8-9ad0-e7220a2e53d8",
 			"type": "rrfNode",
 			"position": {
-				"x": 3038,
+				"x": 3288,
 				"y": 877
 			},
 			"data": {
@@ -614,7 +613,7 @@
 			"id": "finishNode-782aa61d-c830-4605-8a09-95f9b81f264b",
 			"type": "finishNode",
 			"position": {
-				"x": 3538.9277959380106,
+				"x": 3788.9277959380106,
 				"y": 1071.7984140818535
 			},
 			"data": {
@@ -649,7 +648,7 @@
 			"id": "logNode-97b4346d-abae-4852-a5cd-ad05f1273f3c",
 			"type": "logNode",
 			"position": {
-				"x": 3287.1675710030086,
+				"x": 3537.1675710030086,
 				"y": 1068.9325960628946
 			},
 			"data": {
@@ -747,7 +746,7 @@
 				"width": 170,
 				"height": 124
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
@@ -780,6 +779,47 @@
 					"displayName": "",
 					"hasComment": true,
 					"comment": "Error variable assignment"
+				}
+			},
+			"measured": {
+				"width": 170,
+				"height": 124
+			},
+			"selected": false
+		},
+		{
+			"id": "callNode-e0397613-59c0-4299-b673-d3d21576d65d",
+			"type": "callNode",
+			"position": {
+				"x": 2280,
+				"y": 680
+			},
+			"data": {
+				"id": "callNode-e0397613-59c0-4299-b673-d3d21576d65d",
+				"type": "callNode",
+				"position": {
+					"x": 2280,
+					"y": 680
+				},
+				"previousNodeId": "whenNode-c1ae3675-fb2f-40f2-8290-c5190571a966",
+				"branching": "success",
+				"agamaData": {
+					"javaClassName": "",
+					"javaMethodName": "getUserEntityByUsername",
+					"javaVariableName": "userRegistrationService",
+					"exceptionVariableField": "",
+					"callType": "Call method on instance",
+					"arguments": [
+						"userName"
+					],
+					"nodeIcon": "material-symbols:code",
+					"nodeColor": "",
+					"titleColor": "",
+					"descColor": "",
+					"displayName": "",
+					"hasComment": true,
+					"comment": "Check user already exist or not with username",
+					"asssignedVariableName": "userWithUid"
 				}
 			},
 			"measured": {
@@ -1020,25 +1060,6 @@
 			"sourceHandle": "source_callNode-1e9e2090-3521-421c-b1a9-e8bafc4b306c"
 		},
 		{
-			"id": "whenNode-c1ae3675-fb2f-40f2-8290-c5190571a966-callNode-861000cb-79c2-4b41-b03e-70f383658cd7",
-			"type": "default",
-			"source": "whenNode-c1ae3675-fb2f-40f2-8290-c5190571a966",
-			"target": "callNode-861000cb-79c2-4b41-b03e-70f383658cd7",
-			"labelBgPadding": [
-				8,
-				4
-			],
-			"labelBgBorderRadius": 4,
-			"label": "Condition met",
-			"labelBgStyle": {
-				"fill": "#009688",
-				"color": "#ffffff",
-				"fillOpacity": 0.7
-			},
-			"labelShowBg": true,
-			"sourceHandle": "source_whenNode-c1ae3675-fb2f-40f2-8290-c5190571a966_success"
-		},
-		{
 			"id": "callNode-861000cb-79c2-4b41-b03e-70f383658cd7-whenNode-51e74368-a147-4d88-a03f-76daebffff2c",
 			"type": "default",
 			"source": "callNode-861000cb-79c2-4b41-b03e-70f383658cd7",
@@ -1223,11 +1244,49 @@
 				"fillOpacity": 0.7
 			},
 			"id": "xy-edge__logNode-dfc16af5-4d1b-4bd5-88b8-36562fd3c788source_logNode-dfc16af5-4d1b-4bd5-88b8-36562fd3c788-rrfNode-059b5072-b04c-45b8-9ad0-e7220a2e53d8target_rrfNode-059b5072-b04c-45b8-9ad0-e7220a2e53d8"
+		},
+		{
+			"id": "whenNode-c1ae3675-fb2f-40f2-8290-c5190571a966-callNode-e0397613-59c0-4299-b673-d3d21576d65d",
+			"type": "default",
+			"source": "whenNode-c1ae3675-fb2f-40f2-8290-c5190571a966",
+			"target": "callNode-e0397613-59c0-4299-b673-d3d21576d65d",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"label": "Condition met",
+			"labelBgStyle": {
+				"fill": "#009688",
+				"color": "#ffffff",
+				"fillOpacity": 0.7
+			},
+			"labelShowBg": true,
+			"sourceHandle": "source_whenNode-c1ae3675-fb2f-40f2-8290-c5190571a966_success"
+		},
+		{
+			"id": "callNode-e0397613-59c0-4299-b673-d3d21576d65d-callNode-861000cb-79c2-4b41-b03e-70f383658cd7",
+			"type": "default",
+			"source": "callNode-e0397613-59c0-4299-b673-d3d21576d65d",
+			"target": "callNode-861000cb-79c2-4b41-b03e-70f383658cd7",
+			"label": "",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"labelBgStyle": {
+				"fill": "#009688",
+				"color": "#ffffff",
+				"fillOpacity": 0.7
+			},
+			"sourceHandle": "source_callNode-e0397613-59c0-4299-b673-d3d21576d65d",
+			"targetHandle": "target_callNode-861000cb-79c2-4b41-b03e-70f383658cd7"
 		}
 	],
 	"viewport": {
-		"x": -1586,
-		"y": 4,
+		"x": -1760,
+		"y": -127,
 		"zoom": 1
 	}
 }
