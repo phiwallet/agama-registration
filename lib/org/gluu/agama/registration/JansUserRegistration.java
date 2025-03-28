@@ -47,7 +47,8 @@ public class JansUserRegistration extends UserRegistration {
     public boolean passwordPolicyMatch(String password) {
         // Pattern pattern = Pattern.compile("^(?=.*[!@#\\Q$^&*\\E])[A-Za-z0-9!@#\\Q$^&*\\E]{6,}$");
         // String regex = "^(?=.*[!@#\\$\\^&*])[A-Za-z0-9!@#\\$\\^&*]{6,}$";
-        String regex = """^(?=.*[!@#\\$\\^&*])[A-Za-z0-9!@#\\$\\^&*]{6,}$""";
+        // String regex = """^(?=.*[!@#\\$\\^&*])[A-Za-z0-9!@#\\$\\^&*]{6,}$""";
+        String regex = '''^(?=.*[!@#$^&*])[A-Za-z0-9!@#$^&*]{6,}$'''
         Pattern pattern = Pattern.compile(regex);
         return pattern.matcher(password).matches();
     }
