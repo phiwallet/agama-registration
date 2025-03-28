@@ -114,8 +114,8 @@
 			"id": "rrfNode-8fae6a8f-1113-41a1-b159-caf0fdeb26d6",
 			"type": "rrfNode",
 			"position": {
-				"x": 403.26334100397975,
-				"y": 305.9818385514497
+				"x": 560.3353649741073,
+				"y": 197.33051369993285
 			},
 			"data": {
 				"id": "rrfNode-8fae6a8f-1113-41a1-b159-caf0fdeb26d6",
@@ -219,8 +219,8 @@
 			"id": "assignmentNode-8d132c39-d12f-4d76-9064-d40a74250b0b",
 			"type": "assignmentNode",
 			"position": {
-				"x": 653.2633410039799,
-				"y": 314.2487871814564
+				"x": 143.0745112664228,
+				"y": 444.1579799387047
 			},
 			"data": {
 				"id": "assignmentNode-8d132c39-d12f-4d76-9064-d40a74250b0b",
@@ -959,8 +959,8 @@
 			"id": "callNode-7a84709e-29ff-4bfa-a562-97d00771c680",
 			"type": "callNode",
 			"position": {
-				"x": 874.9195171296712,
-				"y": 478.406767120161
+				"x": 1115.8420200612954,
+				"y": 519.7415102701946
 			},
 			"data": {
 				"id": "callNode-7a84709e-29ff-4bfa-a562-97d00771c680",
@@ -969,7 +969,7 @@
 					"x": 1280,
 					"y": 280
 				},
-				"previousNodeId": "assignmentNode-8d132c39-d12f-4d76-9064-d40a74250b0b",
+				"previousNodeId": "callNode-dd90aa5b-fe63-4265-b610-0c8b30fa1ce4",
 				"agamaData": {
 					"javaClassName": "",
 					"javaMethodName": "passwordPolicyMatch",
@@ -987,6 +987,47 @@
 					"hasComment": true,
 					"comment": "check password policy",
 					"asssignedVariableName": "isPasswordPolicyMatch"
+				}
+			},
+			"measured": {
+				"width": 170,
+				"height": 124
+			},
+			"selected": false,
+			"dragging": false
+		},
+		{
+			"id": "callNode-dd90aa5b-fe63-4265-b610-0c8b30fa1ce4",
+			"type": "callNode",
+			"position": {
+				"x": 482.82995353506715,
+				"y": 446.51996526156387
+			},
+			"data": {
+				"id": "callNode-dd90aa5b-fe63-4265-b610-0c8b30fa1ce4",
+				"type": "callNode",
+				"position": {
+					"x": 903.2633410039799,
+					"y": 314.2487871814564
+				},
+				"previousNodeId": "assignmentNode-8d132c39-d12f-4d76-9064-d40a74250b0b",
+				"agamaData": {
+					"javaClassName": "",
+					"javaMethodName": "usernamePolicyMatch",
+					"javaVariableName": "userRegistrationService",
+					"exceptionVariableField": "",
+					"callType": "Call method on instance",
+					"arguments": [
+						"userName"
+					],
+					"nodeIcon": "material-symbols:code",
+					"nodeColor": "",
+					"titleColor": "",
+					"descColor": "",
+					"displayName": "",
+					"hasComment": true,
+					"comment": "Check user name policy match or not",
+					"asssignedVariableName": "isUsernamePolicyMatch"
 				}
 			},
 			"measured": {
@@ -1488,25 +1529,6 @@
 			"id": "xy-edge__whenNode-95f113c1-0fb1-442d-8d6d-b46a7d751befsource_whenNode-95f113c1-0fb1-442d-8d6d-b46a7d751bef_success-callNode-1e9e2090-3521-421c-b1a9-e8bafc4b306ctarget_callNode-1e9e2090-3521-421c-b1a9-e8bafc4b306c"
 		},
 		{
-			"id": "assignmentNode-8d132c39-d12f-4d76-9064-d40a74250b0b-callNode-7a84709e-29ff-4bfa-a562-97d00771c680",
-			"type": "default",
-			"source": "assignmentNode-8d132c39-d12f-4d76-9064-d40a74250b0b",
-			"target": "callNode-7a84709e-29ff-4bfa-a562-97d00771c680",
-			"labelBgPadding": [
-				8,
-				4
-			],
-			"labelBgBorderRadius": 4,
-			"label": "",
-			"labelBgStyle": {
-				"fill": "#009688",
-				"color": "#ffffff",
-				"fillOpacity": 0.7
-			},
-			"labelShowBg": true,
-			"sourceHandle": "source_assignmentNode-8d132c39-d12f-4d76-9064-d40a74250b0b"
-		},
-		{
 			"id": "callNode-7a84709e-29ff-4bfa-a562-97d00771c680-whenNode-95f113c1-0fb1-442d-8d6d-b46a7d751bef",
 			"type": "default",
 			"source": "callNode-7a84709e-29ff-4bfa-a562-97d00771c680",
@@ -1524,11 +1546,49 @@
 			},
 			"sourceHandle": "source_callNode-7a84709e-29ff-4bfa-a562-97d00771c680",
 			"targetHandle": "target_whenNode-95f113c1-0fb1-442d-8d6d-b46a7d751bef"
+		},
+		{
+			"id": "assignmentNode-8d132c39-d12f-4d76-9064-d40a74250b0b-callNode-dd90aa5b-fe63-4265-b610-0c8b30fa1ce4",
+			"type": "default",
+			"source": "assignmentNode-8d132c39-d12f-4d76-9064-d40a74250b0b",
+			"target": "callNode-dd90aa5b-fe63-4265-b610-0c8b30fa1ce4",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"label": "",
+			"labelBgStyle": {
+				"fill": "#009688",
+				"color": "#ffffff",
+				"fillOpacity": 0.7
+			},
+			"labelShowBg": true,
+			"sourceHandle": "source_assignmentNode-8d132c39-d12f-4d76-9064-d40a74250b0b"
+		},
+		{
+			"id": "callNode-dd90aa5b-fe63-4265-b610-0c8b30fa1ce4-callNode-7a84709e-29ff-4bfa-a562-97d00771c680",
+			"type": "default",
+			"source": "callNode-dd90aa5b-fe63-4265-b610-0c8b30fa1ce4",
+			"target": "callNode-7a84709e-29ff-4bfa-a562-97d00771c680",
+			"label": "",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"labelBgStyle": {
+				"fill": "#009688",
+				"color": "#ffffff",
+				"fillOpacity": 0.7
+			},
+			"sourceHandle": "source_callNode-dd90aa5b-fe63-4265-b610-0c8b30fa1ce4",
+			"targetHandle": "target_callNode-7a84709e-29ff-4bfa-a562-97d00771c680"
 		}
 	],
 	"viewport": {
-		"x": -246.14348441546213,
-		"y": -68.94103015377243,
+		"x": -67.14348441546235,
+		"y": 3.058969846227569,
 		"zoom": 0.8467453123625271
 	}
 }
