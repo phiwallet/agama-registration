@@ -356,13 +356,12 @@
 				"previousNodeId": "callNode-0284cdde-d669-436d-9e64-e54768760301",
 				"agamaData": {
 					"javaClassName": "",
-					"javaMethodName": "getUserEntity",
+					"javaMethodName": "getUserEntityByMail",
 					"javaVariableName": "userRegistrationService",
 					"exceptionVariableField": "",
 					"callType": "Call method on instance",
 					"arguments": [
-						"email",
-						"userName"
+						"email"
 					],
 					"nodeIcon": "material-symbols:code",
 					"nodeColor": "",
@@ -378,7 +377,7 @@
 				"width": 170,
 				"height": 124
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "whenNode-c1ae3675-fb2f-40f2-8290-c5190571a966",
@@ -420,7 +419,7 @@
 				"width": 110,
 				"height": 60
 			},
-			"selected": false
+			"selected": true
 		},
 		{
 			"id": "callNode-861000cb-79c2-4b41-b03e-70f383658cd7",
@@ -1227,8 +1226,8 @@
 		}
 	],
 	"viewport": {
-		"x": -1197,
-		"y": -132,
+		"x": -1648,
+		"y": -141,
 		"zoom": 1
 	}
 }
