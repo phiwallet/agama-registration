@@ -40,11 +40,13 @@ Repeat 6 times max
                Otherwise
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
+                    // User already registered with UID
+                    uiFeedback.errorMessage = "User already registered with this UserName"
           Otherwise
                // User already registered with mail
                Log "@info User already registered with mail: %" email
                // User already Registered
-               uiFeedback.errorMessage = "User already Registered"
+               uiFeedback.errorMessage = "User already Registered with this mail"
      Otherwise
           // Password and Confirm password doesn't match
           Log "@trace Password and Confirm password doesn't match"
@@ -53,5 +55,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_jmdcb = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_jmdcb
+it_mwrbv = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_mwrbv
