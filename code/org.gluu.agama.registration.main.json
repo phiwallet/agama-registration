@@ -419,7 +419,7 @@
 				"width": 110,
 				"height": 60
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "callNode-861000cb-79c2-4b41-b03e-70f383658cd7",
@@ -732,7 +732,7 @@
 				"previousNodeId": "whenNode-c1ae3675-fb2f-40f2-8290-c5190571a966",
 				"branching": "otherwise",
 				"agamaData": {
-					"logMessage": "\"User already exists with mail: %\" email",
+					"logMessage": "\"User already registered with mail: %\" email",
 					"logLevel": "info",
 					"nodeIcon": "octicon:log-16",
 					"nodeColor": "",
@@ -740,14 +740,14 @@
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": "User already exists"
+					"comment": "User already registered with mail"
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 124
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false
 		},
 		{
@@ -1226,8 +1226,8 @@
 		}
 	],
 	"viewport": {
-		"x": -1648,
-		"y": -141,
+		"x": -1586,
+		"y": 4,
 		"zoom": 1
 	}
 }
