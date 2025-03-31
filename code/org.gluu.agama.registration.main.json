@@ -1225,7 +1225,9 @@
 					"javaVariableName": "userRegistrationService",
 					"exceptionVariableField": "",
 					"callType": "Call method on instance",
-					"arguments": [],
+					"arguments": [
+						"userPassword"
+					],
 					"nodeIcon": "material-symbols:code",
 					"nodeColor": "",
 					"titleColor": "",
@@ -1827,8 +1829,8 @@
 		}
 	],
 	"viewport": {
-		"x": 21,
-		"y": -141,
+		"x": 238,
+		"y": -76,
 		"zoom": 1
 	}
 }
