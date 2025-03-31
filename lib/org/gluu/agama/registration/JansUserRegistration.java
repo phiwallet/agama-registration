@@ -15,6 +15,7 @@ import java.security.SecureRandom;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.regex.Pattern;
 
 
 
@@ -33,7 +34,7 @@ public class JansUserRegistration extends UserRegistration {
 
     private static JansUserRegistration INSTANCE = null;
 
-    private JansUserRegistration() {}
+    public JansUserRegistration() {}
 
     public static synchronized JansUserRegistration getInstance()
     {
@@ -43,14 +44,23 @@ public class JansUserRegistration extends UserRegistration {
         return INSTANCE;
     }
 
-    public Map<String, String> getUserEntity(String email, String username) {
+    public boolean passwordPolicyMatch(String userPassword) {
+        String regex = '''^(?=.*[!@#$^&*])[A-Za-z0-9!@#$^&*]{6,}$'''
+        Pattern pattern = Pattern.compile(regex);
+        return pattern.matcher(userPassword).matches();
+    }
+
+    public boolean usernamePolicyMatch(String userName) {
+        // Regex: Only alphabets (uppercase and lowercase), minimum 1 character
+        String regex = '''^[A-Za-z]+$''';
+        Pattern pattern = Pattern.compile(regex);
+        return pattern.matcher(userName).matches();
+    }
+
+    public Map<String, String> getUserEntityByMail(String email) {
         User user = getUser(MAIL, email);
         boolean local = user != null;
         LogUtils.log("There is % local account for %", local ? "a" : "no", email);
-
-        User userFoundWithUid = getUser(UID, username);
-        boolean local2 = userFoundWithUid !=null;
-        LogUtils.log("There is % local account for %", local2 ? "a" : "no", username);
     
         if (local) {            
             String uid = getSingleValuedAttr(user, UID);
@@ -73,36 +83,15 @@ public class JansUserRegistration extends UserRegistration {
     
             return userMap;
         }
-        if(local2){
-            String exEmail = getSingleValuedAttr(userFoundWithUid, MAIL);
-            String uid = getSingleValuedAttr(userFoundWithUid, UID);
-            String inum = getSingleValuedAttr(userFoundWithUid, INUM_ATTR);
-            String name = getSingleValuedAttr(userFoundWithUid, GIVEN_NAME);
-    
-            if (name == null) {
-                name = getSingleValuedAttr(userFoundWithUid, DISPLAY_NAME);
-                if (name == null && exEmail != null && exEmail.contains("@")) {
-                    name = exEmail.substring(0, exEmail.indexOf("@"));
-                }
-            }
-    
-            // Creating a truly modifiable map
-            Map<String, String> userMap = new HashMap<>();
-            userMap.put(UID, uid);
-            userMap.put(INUM_ATTR, inum);
-            userMap.put("name", name);
-            userMap.put("email", exEmail);
-    
-            return userMap;           
-        }
     
         return new HashMap<>();
     }
     
 
-    public Map<String, String> getUserEntityByUserName(String userName) {
-        User user = getUser(UID, userName);
+    public Map<String, String> getUserEntityByUsername(String username) {
+        User user = getUser(UID, username);
         boolean local = user != null;
+        LogUtils.log("There is % local account for %", local ? "a" : "no", username);
     
         if (local) {
             String email = getSingleValuedAttr(user, MAIL);
@@ -115,10 +104,7 @@ public class JansUserRegistration extends UserRegistration {
                 if (name == null && email != null && email.contains("@")) {
                     name = email.substring(0, email.indexOf("@"));
                 }
-            }
-    
-            LogUtils.log("There is % local account for %", local ? "a" : "no", userName);
-    
+            }    
             // Creating a modifiable HashMap directly
             Map<String, String> userMap = new HashMap<>();
             userMap.put(UID, uid);
