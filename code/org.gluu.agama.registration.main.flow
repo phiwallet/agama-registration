@@ -13,7 +13,7 @@ Repeat 6 times max
      // Assign userName, email and password  to a variable
      email = userInput.mail
      userName = userInput.uid
-     password = userInput.userPassword
+     userPassword = userInput.userPassword
      // Check user name policy
      isUsernamePolicyMatch = Call userRegistrationService usernamePolicyMatch userName
      // if username policy match
@@ -72,5 +72,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_negnr = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_negnr
+it_fmhal = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_fmhal
