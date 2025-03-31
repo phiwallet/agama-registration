@@ -246,7 +246,7 @@
 						{
 							"variableTypeCheck": true,
 							"assignmentExpression": "userInput.userPassword",
-							"assignedVariableName": "password"
+							"assignedVariableName": "userPassword"
 						}
 					],
 					"nodeIcon": "material-symbols:equal",
@@ -262,7 +262,7 @@
 				"width": 170,
 				"height": 124
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false
 		},
 		{
@@ -1235,7 +1235,7 @@
 				"width": 170,
 				"height": 124
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
@@ -1901,8 +1901,8 @@
 		}
 	],
 	"viewport": {
-		"x": -74,
-		"y": -262,
+		"x": 525,
+		"y": 3,
 		"zoom": 1
 	}
 }
