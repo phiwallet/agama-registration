@@ -72,5 +72,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_gxxsl = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_gxxsl
+it_wgqbl = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_wgqbl
