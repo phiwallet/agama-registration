@@ -44,17 +44,17 @@ public class JansUserRegistration extends UserRegistration {
         return INSTANCE;
     }
 
-    public boolean passwordPolicyMatch(String password) {
+    public boolean passwordPolicyMatch(String userPassword) {
         String regex = '''^(?=.*[!@#$^&*])[A-Za-z0-9!@#$^&*]{6,}$'''
         Pattern pattern = Pattern.compile(regex);
-        return pattern.matcher(password).matches();
+        return pattern.matcher(userPassword).matches();
     }
 
-    public boolean usernamePolicyMatch(String username) {
+    public boolean usernamePolicyMatch(String userName) {
         // Regex: Only alphabets (uppercase and lowercase), minimum 1 character
         String regex = '''^[A-Za-z]+$''';
         Pattern pattern = Pattern.compile(regex);
-        return pattern.matcher(username).matches();
+        return pattern.matcher(userName).matches();
     }
 
     public Map<String, String> getUserEntityByMail(String email) {
