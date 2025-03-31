@@ -230,7 +230,7 @@
 					"x": 1030,
 					"y": 280
 				},
-				"previousNodeId": "rrfNode-8fae6a8f-1113-41a1-b159-caf0fdeb26d6",
+				"previousNodeId": "callNode-10bd705b-7d64-4d18-bde1-aa3069aea8d1",
 				"agamaData": {
 					"assignments": [
 						{
@@ -995,7 +995,7 @@
 				"width": 170,
 				"height": 124
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
@@ -1239,6 +1239,44 @@
 			"dragging": false
 		},
 		{
+			"id": "callNode-10bd705b-7d64-4d18-bde1-aa3069aea8d1",
+			"type": "callNode",
+			"position": {
+				"x": 24.181614485503246,
+				"y": 180.23547700708048
+			},
+			"data": {
+				"id": "callNode-10bd705b-7d64-4d18-bde1-aa3069aea8d1",
+				"type": "callNode",
+				"position": {
+					"x": 24.181614485503246,
+					"y": 180.23547700708048
+				},
+				"previousNodeId": "rrfNode-8fae6a8f-1113-41a1-b159-caf0fdeb26d6",
+				"agamaData": {
+					"javaClassName": "org.gluu.agama.user.UserRegistration",
+					"javaMethodName": "getInstance",
+					"javaVariableName": "",
+					"exceptionVariableField": "",
+					"callType": "Call static method",
+					"arguments": [],
+					"nodeIcon": "material-symbols:code",
+					"nodeColor": "",
+					"titleColor": "",
+					"descColor": "",
+					"displayName": "",
+					"hasComment": true,
+					"comment": "create an instance of Registration service",
+					"asssignedVariableName": "userRegistrationService"
+				}
+			},
+			"measured": {
+				"width": 170,
+				"height": 124
+			},
+			"selected": false
+		},
+		{
 			"id": "assignmentNode-f1d0cb19-c2fb-41b6-9d83-a69308696bca",
 			"type": "assignmentNode",
 			"position": {
@@ -1355,25 +1393,6 @@
 			},
 			"labelShowBg": true,
 			"sourceHandle": "source_logNode-9706dda7-3f9f-43e8-8506-2a5cb6bb30db"
-		},
-		{
-			"id": "rrfNode-8fae6a8f-1113-41a1-b159-caf0fdeb26d6-assignmentNode-8d132c39-d12f-4d76-9064-d40a74250b0b",
-			"type": "default",
-			"source": "rrfNode-8fae6a8f-1113-41a1-b159-caf0fdeb26d6",
-			"target": "assignmentNode-8d132c39-d12f-4d76-9064-d40a74250b0b",
-			"labelBgPadding": [
-				8,
-				4
-			],
-			"labelBgBorderRadius": 4,
-			"label": "",
-			"labelBgStyle": {
-				"fill": "#009688",
-				"color": "#ffffff",
-				"fillOpacity": 0.7
-			},
-			"labelShowBg": true,
-			"sourceHandle": "source_rrfNode-8fae6a8f-1113-41a1-b159-caf0fdeb26d6"
 		},
 		{
 			"id": "callNode-1e9e2090-3521-421c-b1a9-e8bafc4b306c-whenNode-c1ae3675-fb2f-40f2-8290-c5190571a966",
@@ -1898,11 +1917,49 @@
 			},
 			"sourceHandle": "source_logNode-cf3e7999-8545-4c2e-b1f3-1d8c5970e481",
 			"targetHandle": "target_callNode-7a84709e-29ff-4bfa-a562-97d00771c680"
+		},
+		{
+			"id": "rrfNode-8fae6a8f-1113-41a1-b159-caf0fdeb26d6-callNode-10bd705b-7d64-4d18-bde1-aa3069aea8d1",
+			"type": "default",
+			"source": "rrfNode-8fae6a8f-1113-41a1-b159-caf0fdeb26d6",
+			"target": "callNode-10bd705b-7d64-4d18-bde1-aa3069aea8d1",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"label": "",
+			"labelBgStyle": {
+				"fill": "#009688",
+				"color": "#ffffff",
+				"fillOpacity": 0.7
+			},
+			"labelShowBg": true,
+			"sourceHandle": "source_rrfNode-8fae6a8f-1113-41a1-b159-caf0fdeb26d6"
+		},
+		{
+			"id": "callNode-10bd705b-7d64-4d18-bde1-aa3069aea8d1-assignmentNode-8d132c39-d12f-4d76-9064-d40a74250b0b",
+			"type": "default",
+			"source": "callNode-10bd705b-7d64-4d18-bde1-aa3069aea8d1",
+			"target": "assignmentNode-8d132c39-d12f-4d76-9064-d40a74250b0b",
+			"label": "",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"labelBgStyle": {
+				"fill": "#009688",
+				"color": "#ffffff",
+				"fillOpacity": 0.7
+			},
+			"sourceHandle": "source_callNode-10bd705b-7d64-4d18-bde1-aa3069aea8d1",
+			"targetHandle": "target_assignmentNode-8d132c39-d12f-4d76-9064-d40a74250b0b"
 		}
 	],
 	"viewport": {
-		"x": -495,
-		"y": -340,
+		"x": 604,
+		"y": 155,
 		"zoom": 1
 	}
 }
