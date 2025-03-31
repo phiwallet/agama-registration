@@ -19,7 +19,7 @@ Repeat 6 times max
      // if username policy match
      When isUsernamePolicyMatch is true
           // Password policy check
-          isPasswordPolicyMatch = Call userRegistrationService passwordPolicyMatch 
+          isPasswordPolicyMatch = Call userRegistrationService passwordPolicyMatch userPassword
           // if password policy match
           When isPasswordPolicyMatch is true
                // Matching password 
@@ -70,5 +70,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_zmvyx = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_zmvyx
+it_nnkfh = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_nnkfh
