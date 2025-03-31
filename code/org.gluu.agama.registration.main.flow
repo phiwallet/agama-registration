@@ -4,8 +4,6 @@ Flow org.gluu.agama.registration.main
      Timeout 360 seconds
 // Create  variable for UI feedback
 uiFeedback = {}
-// create an instance of Registration service
-userRegistrationService = Call org.gluu.agama.user.UserRegistration#getInstance 
 // Iterate x times max
 Repeat 6 times max
      // Retrieve user profile  from UI
@@ -74,5 +72,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_dpzeg = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_dpzeg
+it_cluzz = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_cluzz
