@@ -79,6 +79,8 @@ To invoke the `org.gluu.agama.registration.main` flow contained in the  Agama-Re
 specify the ACR value as `agama_<qualified-name-of-the-top-level-flow>`, 
 i.e  `agama_org.gluu.agama.registration.main`.
 
+**[N.B]** The OpenID client should include the `authorization_challenge` scope.
+
 ## Customize and Make It Your Own
 
 Fork this repo to start customizing the Agama-Registration project. It is possible to 
