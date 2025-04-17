@@ -4,6 +4,8 @@ import io.jans.as.common.model.common.User;
 import io.jans.as.common.service.common.EncryptionService;
 import io.jans.as.common.service.common.UserService;
 import io.jans.orm.exception.operation.EntryNotFoundException;
+import io.jans.service.MailService;
+import io.jans.model.SmtpConfiguration;
 import io.jans.service.cdi.util.CdiUtil;
 import io.jans.util.StringHelper;
 
@@ -16,6 +18,9 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.regex.Pattern;
+
+import org.gluu.agama.EmailTemplate;
+
 
 
 
@@ -30,6 +35,9 @@ public class JansUserRegistration extends UserRegistration {
     private static final String EXT_ATTR = "jansExtUid";
     private static final String USER_STATUS = "jansStatus";
     private static final String EXT_UID_PREFIX = "github:";
+    private static final int OTP_LENGTH = 6;
+    private static final String SUBJECT_TEMPLATE = "Here's your verification code: %s";
+    private static final String MSG_TEMPLATE_TEXT = "%s is the code to complete your verification";   
     private static final SecureRandom RAND = new SecureRandom();
 
     private static JansUserRegistration INSTANCE = null;
@@ -45,22 +53,12 @@ public class JansUserRegistration extends UserRegistration {
     }
 
     public boolean passwordPolicyMatch(String userPassword) {
-        // Only following characters allowed:
-        // - Uppercase letters A–Z
-        // - Lowercase letters a–z
-        // - Digits 0–9
-        // - Special characters: ! @ # $ ^ & *
-
-        // Include at least one of the special characters: !@#$^&*
-        // Minimum length is 12, Maximum is 24
         String regex = '''^(?=.*[!@#$^&*])[A-Za-z0-9!@#$^&*]{12,24}$''';
         Pattern pattern = Pattern.compile(regex);
         return pattern.matcher(userPassword).matches();
     }
 
     public boolean usernamePolicyMatch(String userName) {
-        // Regex: Only alphabets (uppercase and lowercase), digits, dot and underscore allowed
-        // Minimum 6 characters, Maximum 20
         String regex = '''^[A-Za-z0-9_.]{6,20}$''';
         Pattern pattern = Pattern.compile(regex);
         return pattern.matcher(userName).matches();
@@ -126,7 +124,36 @@ public class JansUserRegistration extends UserRegistration {
     
         return new HashMap<>();
     }
-    
+
+    public String sendEmail(String to) {
+
+        SmtpConfiguration smtpConfiguration = getSmtpConfiguration();
+        IntStream digits = RAND.ints(OTP_LENGTH, 0, 10);
+        String otp = digits.mapToObj(i -> "" + i).collect(Collectors.joining());
+        String from = smtpConfiguration.getFromEmailAddress();
+        String subject = String.format(SUBJECT_TEMPLATE, otp);
+        String textBody = String.format(MSG_TEMPLATE_TEXT, otp);
+        String htmlBody = EmailTemplate.get(otp);
+
+        MailService mailService = CdiUtil.bean(MailService.class);
+
+        if (mailService.sendMailSigned(from, from, to, null, subject, textBody, htmlBody)) {
+            LogUtils.log("E-mail has been delivered to % with code %", to, otp);
+            return otp;
+        }
+        LogUtils.log("E-mail delivery failed, check jans-auth logs");
+        return null;
+
+    }
+
+    private SmtpConfiguration getSmtpConfiguration() {
+        ConfigurationService configurationService = CdiUtil.bean(ConfigurationService.class);
+        SmtpConfiguration smtpConfiguration = configurationService.getConfiguration().getSmtpConfiguration();
+        LogUtils.log("Your smtp configuration is %", smtpConfiguration);
+        return smtpConfiguration;
+
+    }     
+
 
     public String addNewUser(Map<String, String> profile) throws Exception {
         Set<String> attributes = Set.of("uid", "mail", "displayName","givenName", "sn", "userPassword");
