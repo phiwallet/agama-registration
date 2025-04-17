@@ -868,7 +868,7 @@
 					"assignments": [
 						{
 							"variableTypeCheck": true,
-							"assignmentExpression": "\"User already Registered with this mail\"",
+							"assignmentExpression": "\"User already registered with this email.\"",
 							"assignedVariableName": "uiFeedback.errorMessage"
 						}
 					],
@@ -1026,7 +1026,7 @@
 					"assignments": [
 						{
 							"variableTypeCheck": true,
-							"assignmentExpression": "\"User already registered with this UserName\"",
+							"assignmentExpression": "\"User already registered with this username.\"",
 							"assignedVariableName": "uiFeedback.errorMessage"
 						}
 					],
@@ -1186,7 +1186,7 @@
 					"assignments": [
 						{
 							"variableTypeCheck": true,
-							"assignmentExpression": "\"Password must be at least 6 characters long and contain at least one special character\"",
+							"assignmentExpression": "\"Password must be at least 12 characters long and contain at least one special character.\"",
 							"assignedVariableName": "uiFeedback.errorMessage"
 						}
 					],

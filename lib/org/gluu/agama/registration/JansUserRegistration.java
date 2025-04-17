@@ -45,14 +45,23 @@ public class JansUserRegistration extends UserRegistration {
     }
 
     public boolean passwordPolicyMatch(String userPassword) {
-        String regex = '''^(?=.*[!@#$^&*])[A-Za-z0-9!@#$^&*]{6,}$'''
+        // Only following characters allowed:
+        // - Uppercase letters A–Z
+        // - Lowercase letters a–z
+        // - Digits 0–9
+        // - Special characters: ! @ # $ ^ & *
+
+        // Include at least one of the special characters: !@#$^&*
+        // Minimum length is 12, Maximum is 24
+        String regex = "^(?=.*[!@#$^&*])[A-Za-z0-9!@#$^&*]{12,24}$";
         Pattern pattern = Pattern.compile(regex);
         return pattern.matcher(userPassword).matches();
     }
 
     public boolean usernamePolicyMatch(String userName) {
-        // Regex: Only alphabets (uppercase and lowercase), minimum 1 character
-        String regex = '''^[A-Za-z]+$''';
+        // Regex: Only alphabets (uppercase and lowercase), digits, dot and underscore allowed
+        // Minimum 6 characters, Maximum 20
+        String regex ="^[A-Za-z0-9_.]{6,20}$";
         Pattern pattern = Pattern.compile(regex);
         return pattern.matcher(userName).matches();
     }

@@ -50,12 +50,12 @@ Repeat 6 times max
                               // User already registered with UID
                               Log "@info User already registered with uid: %" userName
                               // User already registered with UID
-                              uiFeedback.errorMessage = "User already registered with this UserName"
+                              uiFeedback.errorMessage = "User already registered with this username."
                     Otherwise
                          // User already registered with mail
                          Log "@info User already registered with mail: %" email
                          // User already Registered
-                         uiFeedback.errorMessage = "User already Registered with this mail"
+                         uiFeedback.errorMessage = "User already registered with this email."
                Otherwise
                     // Password and Confirm password doesn't match
                     Log "@trace Password and Confirm password doesn't match"
@@ -63,7 +63,7 @@ Repeat 6 times max
                     uiFeedback.errorMessage = "Password and confirm password not matching"
           Otherwise
                // password policy
-               uiFeedback.errorMessage = "Password must be at least 6 characters long and contain at least one special character"
+               uiFeedback.errorMessage = "Password must be at least 12 characters long and contain at least one special character."
      Otherwise
           // Name should contain only alphabets
           uiFeedback.errorMessage = "Name should contain only alphabets"
