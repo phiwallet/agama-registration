@@ -33,7 +33,7 @@
 		<form method="post" enctype="application/x-www-form-urlencoded" id="registerForm">
 		  <div class="form-group">
 			<label class="form-label">Username: <span class="required">*</span></label>
-			<input type="text" id="uid" name="uid" pattern="[A-Za-z]+" title="Name should contain only alphabets" required="" placeholder="Choose a username" class="form-control">
+			<input type="text" id="uid" name="uid" pattern="[A-Za-z]+" title="username should contain only alphabets and numbers and begin with an alphabet." required="" placeholder="Choose a username" class="form-control">
 		  </div>
 		  <div class="form-group">
 			<label class="form-label">Display Name: <span class="required">*</span></label>

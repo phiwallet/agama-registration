@@ -1074,7 +1074,7 @@
 					"assignments": [
 						{
 							"variableTypeCheck": true,
-							"assignmentExpression": "\"Name should contain only alphabets\"",
+							"assignmentExpression": "\"username should contain only alphabets and numbers and begin with an alphabet.\"",
 							"assignedVariableName": "uiFeedback.errorMessage"
 						}
 					],
@@ -1084,7 +1084,7 @@
 					"descColor": "",
 					"displayName": "",
 					"hasComment": true,
-					"comment": "Name should contain only alphabets"
+					"comment": "username should contain only alphabets and numbers and begin with an alphabet."
 				}
 			},
 			"measured": {
@@ -1152,7 +1152,7 @@
 					"assignments": [
 						{
 							"variableTypeCheck": true,
-							"assignmentExpression": "\"Password must be at least 12 characters long and contain at least one special character.\"",
+							"assignmentExpression": "\"Password must be between 12 and 24 characters in length and contain at least one special character/alphabet/digit.\"",
 							"assignedVariableName": "uiFeedback.errorMessage"
 						}
 					],

@@ -82,10 +82,10 @@ Repeat 6 times max
                     uiFeedback.errorMessage = "Password and confirm password not matching"
           Otherwise
                // password policy
-               uiFeedback.errorMessage = "Password must be at least 12 characters long and contain at least one special character."
+               uiFeedback.errorMessage = "Password must be between 12 and 24 characters in length and contain at least one special character/alphabet/digit."
      Otherwise
-          // Name should contain only alphabets
-          uiFeedback.errorMessage = "Name should contain only alphabets"
+          // Name should contain only alphabets and numbers
+          uiFeedback.errorMessage = "username should contain only alphabets and numbers and begin with an alphabet."
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
