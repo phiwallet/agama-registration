@@ -53,15 +53,25 @@ public class JansUserRegistration extends UserRegistration {
     }
 
     public boolean passwordPolicyMatch(String userPassword) {
-        String regex = '''^(?=.*[!@#$^&*])[A-Za-z0-9!@#$^&*]{12,24}$''';
-        Pattern pattern = Pattern.compile(regex);
-        return pattern.matcher(userPassword).matches();
+    // Regex Explanation:
+    // - (?=.*[!-~&&[^ ]]) ensures at least one printable ASCII character except space (also helps exclude space)
+    // - (?=.*[!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~]) ensures at least one special character
+    // - (?=.*[A-Za-z]) ensures at least one letter
+    // - (?=.*\\d) ensures at least one digit
+    // - [!-~&&[^ ]] limits all characters to printable ASCII excluding space (ASCII 33–126)
+    String regex = '''^(?=.*[A-Za-z])(?=.*\\d)(?=.*[!"#$%&'()*+,-./:;<=>?@[\\\\]^_`{|}~])[!-~&&[^ ]]{12,24}$''';
+    Pattern pattern = Pattern.compile(regex);
+    return pattern.matcher(userPassword).matches();
     }
 
     public boolean usernamePolicyMatch(String userName) {
-        String regex = '''^[A-Za-z0-9_.]{6,20}$''';
-        Pattern pattern = Pattern.compile(regex);
-        return pattern.matcher(userName).matches();
+    // Username must:
+    // - Start with an English letter
+    // - Contain only English letters and digits
+    // - Be 6 to 20 characters long
+    String regex = '''^[A-Za-z][A-Za-z0-9]{5,19}$''';
+    Pattern pattern = Pattern.compile(regex);
+    return pattern.matcher(userName).matches();
     }
 
     public Map<String, String> getUserEntityByMail(String email) {
