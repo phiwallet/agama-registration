@@ -166,7 +166,7 @@ public class JansUserRegistration extends UserRegistration {
 
 
     public String addNewUser(Map<String, String> profile) throws Exception {
-        Set<String> attributes = Set.of("uid", "mail", "displayName","givenName", "sn", "userPassword");
+        Set<String> attributes = Set.of("uid", "mail", "displayName","givenName", "sn", "userPassword", "lang", "residenceCountry", "referralCode");
         User user = new User();
     
         attributes.forEach(attr -> {
