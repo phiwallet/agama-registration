@@ -1,0 +1,8 @@
+[en]
+mail.subjectTemplate = Here is your verification code (OTP): {0}
+mail.msgTemplateText = {0} is the code to complete your verification
+mail.templateMsgOne = Enter the 6-digit code below to verify your email address at gluu.org
+mail.templateMsgTwo = If you did not make this request, you can safely ignore this email.    
+mail.templateMsgThree = Thanks for helping us keep your account secure.
+mail.templateMsgFour = The Gluu Team
+
