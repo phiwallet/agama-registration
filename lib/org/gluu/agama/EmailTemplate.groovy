@@ -19,8 +19,8 @@ class EmailTemplate {
 
         """
 <div style="width: 640px; font-size: 18px; font-family: 'Roboto', sans-serif; font-weight: 300">
-    <div style="background-color: #b6f6da; border-bottom: 1px solid #0ca65d">
-        <img src="https://gluu.org/wp-content/uploads/elementor/thumbs/Logo-qbe8p4qgmufqni0becxda6fnfib6krzb65uihag270.png" alt="Gluu Inc." />
+    <div>
+        <img src="https://storage.googleapis.com/email_template_staticfiles/Phi_logo320x132_Aug2024.png" alt="Phi Wallet" />
     </div>
     <div style="padding: 12px; border-bottom: 1px solid #ccc;">
         <p>
@@ -29,11 +29,11 @@ class EmailTemplate {
         ${templateMsgOne} 
         </p>
         <div style="display: flex; justify-content: center">
-            <div style="background-color: #b6f6da; color: #0ca65d; font-size: 40px; font-weight: 400; letter-spacing: 6px" align="center">
+            <div style="background-color:rgb(230, 230, 230); color: #AD9269; font-size: 40px; font-weight: 400; letter-spacing: 6px" align="center">
                 ${otp}
             </div>
         </div>
-        <p style="font-size: 14px">
+        <p>
         ${templateMsgTwo}
         </p>
         <p>
