@@ -20,61 +20,92 @@ class EmailTemplate {
         """
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Phi Wallet Email</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Email Verification</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap" rel="stylesheet" />
   <style>
-    @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:400,700&display=swap");
-
-    body, p {
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
       font-family: 'Nunito Sans', sans-serif;
+    }
+    .email-container {
+      max-width: 640px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      font-size: 18px;
+      font-weight: 300;
+      padding: 20px;
+    }
+    .logo {
+      text-align: center;
+      padding-bottom: 10px;
+    }
+    .logo img {
+      max-height: 60px;
+      width: auto;
+    }
+    .content {
+      padding: 12px 0;
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+    }
+    .otp-box {
+      background-color: #f5f5f5; /* now matches outer background */
+      color: #AD9269;
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: 6px;
+      padding: 10px 24px;
+      border-radius: 6px;
+      display: inline-block;
+      margin: 24px auto;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .email-container {
+        padding: 16px;
+        font-size: 16px;
+      }
+      .otp-box {
+        font-size: 32px;
+        padding: 10px 16px;
+        letter-spacing: 4px;
+      }
+      .logo img {
+        max-height: 48px;
+      }
     }
   </style>
 </head>
-<body style="margin: 0; padding: 0; background-color: #f9f9f9;">
-  <div style="width: 640px; font-size: 18px; font-family: 'Nunito Sans', sans-serif; font-weight: 400; margin: 0 auto; background-color: #ffffff;">
-    <!-- Logo Banner -->
-    <div style="text-align: center; padding: 20px 0;">
-      <img src="https://storage.googleapis.com/email_template_staticfiles/Phi_logo320x132_Aug2024.png"
-           alt="Phi Wallet"
-           width="160"
-           height="66"
-           style="display: block; margin: 0 auto;" />
-    </div>
+<body>
 
-    <!-- Email Body -->
-    <div style="padding: 20px; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;">
-      <p style="margin-bottom: 16px;">
-        <strong>Hi,</strong><br />
-        ${templateMsgOne}
-      </p>
+  <div style="padding: 40px 0; background-color: #f5f5f5;">
+    <div class="email-container">
+      
+      <div class="logo">
+        <img src="https://storage.googleapis.com/email_template_staticfiles/Phi_logo320x132_Aug2024.png" alt="Phi Wallet" />
+      </div>
+      
+      <div class="content">
+        <p><strong>Hi,</strong><br>
+        ${templateMsgOne}</p>
 
-      <!-- OTP Code -->
-      <div style="text-align: center; margin: 30px 0;">
-        <div style="
-          display: inline-block;
-          background-color: #e2e2e2;
-          color: #AD9269;
-          font-size: 36px;
-          font-weight: 700;
-          letter-spacing: 6px;
-          padding: 12px 24px;
-          border-radius: 8px;">
-          ${otp}
+        <div style="text-align: center;">
+          <div class="otp-box">${otp}</div>
         </div>
+
+        <p>${templateMsgTwo}</p>
+        <p>${templateMsgThree}<br>${templateMsgFour}</p>
       </div>
 
-      <p style="margin-bottom: 16px;">
-        ${templateMsgTwo}
-      </p>
-
-      <p style="margin-bottom: 0;">
-        ${templateMsgThree}<br />
-        ${templateMsgFour}
-      </p>
     </div>
   </div>
+
 </body>
 </html>
 
