@@ -33,7 +33,7 @@
 		<form method="post" enctype="application/x-www-form-urlencoded" id="registerForm">
 		  <div class="form-group">
 			<label class="form-label">Username: <span class="required">*</span></label>
-			<input type="text" id="uid" name="uid" pattern="[A-Za-z]+" title="username should contain only alphabets and numbers and begin with an alphabet." required="" placeholder="Choose a username" class="form-control">
+			<input type="text" id="uid" name="uid" pattern="[A-Za-z]+" title="Name should contain only alphabets" required="" placeholder="Choose a username" class="form-control">
 		  </div>
 		  <div class="form-group">
 			<label class="form-label">Display Name: <span class="required">*</span></label>
@@ -53,7 +53,7 @@
 		  </div>
 		  <div class="form-group">
 			<label class="form-label">Password: <span class="required">*</span></label>
-			<input type="password" id="userPassword" name="userPassword" minlength="6" pattern="^(?=.*[!@#$%^&amp;*])(?=.*[A-Za-z0-9]).{6,}$" required="" placeholder="Choose a strong password" class="form-control" title="Password must be at least 6 characters long and contain at least one special character (!@#$%^&amp;*)">
+			<input type="password" id="userPassword" name="userPassword" minlength="6" pattern="^(?=.*[!@#$%^&amp;*])(?=.*[A-Za-z0-9]).{6,}$" required="" placeholder="Choose a strong password" title="Password must be at least 6 characters long and contain at least one special character (!@#$%^&amp;*)" class="form-control">
 		  </div>
 		  <div class="form-group">
 			<label class="form-label">Repeat Password: <span class="required">*</span></label>

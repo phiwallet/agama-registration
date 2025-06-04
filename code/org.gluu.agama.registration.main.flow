@@ -15,16 +15,12 @@ Repeat 6 times max
      email = userInput.mail
      userName = userInput.uid
      userPassword = userInput.userPassword
-     // Check user name policy
-     isUsernamePolicyMatch = Call userRegistrationService usernamePolicyMatch userName
-     // if username policy match
-     When isUsernamePolicyMatch is true
-          // Password policy check
-          isPasswordPolicyMatch = Call userRegistrationService passwordPolicyMatch userPassword
-          // if password policy match
-          When isPasswordPolicyMatch is true
-               // Matching password 
-               When userInput.userPassword is userInput.confirmPassword
+     // Validate user inputs
+     validation = Call userRegistrationService validateInputs userInput
+     // Validation result log
+     Log "@info Validation result:  % , % , %" validation validation.valid validation.message
+     // If successfully validate
+     When validation.valid is true
           // Check user already exist or not with mail
           user = Call userRegistrationService getUserEntityByMail email
           // If user not found
@@ -40,8 +36,8 @@ Repeat 6 times max
                          // log for unsuccessful Email delivery
                          Log "@info Unable to deliver e-mail message"
                          // Unable to deliver e-mail message
-                                   it_phfqy = {success:false, error: "Unable to deliver e-mail message"}
-                                   Finish it_phfqy
+                         it_ftcfc = {success:false, error: "Unable to deliver e-mail message"}
+                         Finish it_ftcfc
                     // Re-try Matching OTP
                     Repeat 3 times max
                          // OTP input form
@@ -69,25 +65,17 @@ Repeat 6 times max
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
                     // User already registered with UID
-                              uiFeedback.errorMessage = "User already registered with this username."
+                    uiFeedback.errorMessage = "User already registered with this UserName"
           Otherwise
                // User already registered with mail
                Log "@info User already registered with mail: %" email
                // User already Registered
-                         uiFeedback.errorMessage = "User already registered with this email."
-               Otherwise
-                    // Password and Confirm password doesn't match
-                    Log "@trace Password and Confirm password doesn't match"
-                    // Error variable assignment
-                    uiFeedback.errorMessage = "Password and confirm password not matching"
-          Otherwise
-               // password policy
-               uiFeedback.errorMessage = "Password must be between 12 and 24 characters in length and contain at least one special character/alphabet/digit."
+               uiFeedback.errorMessage = "User already Registered with this mail"
      Otherwise
-          // Name should contain only alphabets and numbers
-          uiFeedback.errorMessage = "username should contain only alphabets and numbers and begin with an alphabet."
+          // Validate message 
+          uiFeedback.errorMessage = validation.message
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_jcxgj = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_jcxgj
+it_hznfx = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_hznfx
