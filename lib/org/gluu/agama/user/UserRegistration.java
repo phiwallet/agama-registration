@@ -13,7 +13,7 @@ public abstract class UserRegistration {
 
     public abstract boolean passwordPolicyMatch(String userPassword);
 
-    public abstract String sendEmail(String to);
+    public abstract String sendEmail(String to, String lang);
     
     public static UserRegistration getInstance(){
         return  JansUserRegistration.getInstance();
