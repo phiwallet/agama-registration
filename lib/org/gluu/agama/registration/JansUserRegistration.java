@@ -102,12 +102,6 @@ public class JansUserRegistration extends UserRegistration {
             return result;
         }
 
-        if (profile.get(REFERRAL_CODE) == null || !Pattern.matches('''^[A-Z0-9]{1,16}$''', profile.get(REFERRAL_CODE))) {
-            result.put("valid", false);
-            result.put("message", "Invalid referral code. Must be uppercase alphanumeric and 1-16 characters.");
-            return result;
-        }
-
         if (profile.get(RESIDENCE_COUNTRY) == null || !Pattern.matches('''^[A-Z]{2}$''', profile.get(RESIDENCE_COUNTRY))) {
             result.put("valid", false);
             result.put("message", "Invalid residence country. Must be exactly two uppercase letters.");
