@@ -8,6 +8,7 @@ public class Labels {
         "en", Map.of(
             "subject", "Your verification code",
             "msgText", "{0} is your verification code.",
+            "line0", "Hi",
             "line1", "Enter the 6-digit code below to verify your email address.",
             "line2", "If you did not make this request, you can safely ignore this email.",
             "line3", "Thanks for helping us keep your account secure.",
@@ -16,6 +17,7 @@ public class Labels {
         "ar", Map.of(
             "subject", "رمز التحقق الخاص بك",
             "msgText", "{0} هو رمز التحقق الخاص بك.",
+            "line0", "مرحبا",
             "line1", "أدخل الرمز المكون من 6 أرقام أدناه للتحقق من عنوان بريدك الإلكتروني.",
             "line2", "إذا لم تقم بطلب ذلك، يمكنك تجاهل هذا البريد الإلكتروني بأمان.",
             "line3", "شكرًا لمساعدتنا في الحفاظ على أمان حسابك.",
@@ -24,6 +26,7 @@ public class Labels {
         "fr", Map.of(
             "subject", "Votre code de vérification",
             "msgText", "{0} est votre code de vérification.",
+            "line0", "Bonjour",
             "line1", "Entrez le code à 6 chiffres ci-dessous pour vérifier votre adresse e-mail.",
             "line2", "Si vous n'êtes pas à l'origine de cette demande, vous pouvez ignorer cet e-mail en toute sécurité.",
             "line3", "Merci de nous aider à sécuriser votre compte.",
@@ -32,6 +35,7 @@ public class Labels {
         "pt", Map.of(
             "subject", "Seu código de verificação",
             "msgText", "{0} é o seu código de verificação.",
+            "line0", "Olá",
             "line1", "Insira o código de 6 dígitos abaixo para verificar seu endereço de e-mail.",
             "line2", "Se você não solicitou isso, pode ignorar este e-mail com segurança.",
             "line3", "Obrigado por nos ajudar a manter sua conta segura.",
@@ -40,6 +44,7 @@ public class Labels {
         "es", Map.of(
             "subject", "Tu código de verificación",
             "msgText", "{0} es tu código de verificación.",
+            "line0", "Hola",
             "line1", "Ingresa el código de 6 dígitos a continuación para verificar tu dirección de correo electrónico.",
             "line2", "Si no solicitaste esto, puedes ignorar este correo electrónico con seguridad.",
             "line3", "Gracias por ayudarnos a mantener tu cuenta segura.",
@@ -48,6 +53,7 @@ public class Labels {
         "id", Map.of(
             "subject", "Kode verifikasi Anda",
             "msgText", "{0} adalah kode verifikasi Anda.",
+            "line0", "Hai",
             "line1", "Masukkan kode 6 digit di bawah ini untuk memverifikasi alamat email Anda.",
             "line2", "Jika Anda tidak meminta ini, Anda dapat mengabaikan email ini dengan aman.",
             "line3", "Terima kasih telah membantu menjaga keamanan akun Anda.",

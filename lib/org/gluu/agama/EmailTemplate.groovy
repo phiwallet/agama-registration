@@ -7,7 +7,7 @@ class EmailTemplate {
     
     private static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM dd, YYYY, HH:mma (O)");
 
-    static String get(String otp, String line1, String line2, String line3, String line4) {     
+    static String get(String otp, String line0, String line1, String line2, String line3, String line4) {
 
         """
 
@@ -84,7 +84,7 @@ class EmailTemplate {
       </div>
       
       <div class="content">
-        <p><strong>Hi,</strong><br>
+        <p><strong>${line0},</strong><br>
         ${line1}</p>
 
         <div style="text-align: center;">

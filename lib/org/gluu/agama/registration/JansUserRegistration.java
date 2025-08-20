@@ -189,12 +189,13 @@ public class JansUserRegistration extends UserRegistration {
         // Fetch each piece of text from the bundle
         String subject = labels.get("subject");
         String msgText = labels.get("msgText").replace("{0}", otp);
+        String line0 = labels.get("line0");
         String line1 = labels.get("line1");
         String line2 = labels.get("line2");
         String line3 = labels.get("line3");
         String line4 = labels.get("line4");
 
-        String htmlBody = EmailTemplate.get(otp, line1, line2, line3, line4);
+        String htmlBody = EmailTemplate.get(otp, line0, line1, line2, line3, line4);
 
         SmtpConfiguration smtpConfiguration = getSmtpConfiguration();
         String from = smtpConfiguration.getFromEmailAddress();
